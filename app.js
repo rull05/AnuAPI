@@ -2,12 +2,16 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
-const PORT = process.env.PORT || 7070;
-const app = express();
 // Local
 const { apiController } = require('./routes');
 
+const PORT = process.env.PORT || 7070;
+const app = express();
+
 app.use(bodyParser.json());
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use(morgan('dev'));
 
 app.use('/api', apiController);

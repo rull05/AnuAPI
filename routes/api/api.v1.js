@@ -4,7 +4,7 @@ const { STATUS_CODES } = require('http');
 
 const router = Router();
 
-router.post('/htmlrender', async (req, res, next) => {
+router.post('/htmlrender', async (req, res) => {
   console.log(req.body);
   const { html, option } = req.body;
   if (!html) {
