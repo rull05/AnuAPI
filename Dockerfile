@@ -22,4 +22,4 @@ RUN apt-get update \
 COPY . .
 
 EXPOSE 7070
-CMD ["node app.js"]
+CMD ["node", "app.js"]
