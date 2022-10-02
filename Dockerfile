@@ -1,5 +1,5 @@
 FROM node:16
-
+RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 
 COPY package*.json ./
@@ -22,4 +22,4 @@ RUN apt-get update \
 COPY . .
 
 EXPOSE 7070
-CMD ['node', 'app.js']
+CMD ["node app.js"]
