@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 app.use('/api', apiController);
 app.get('/', (req, res) => {
-  res.send('<h1 styles="margin: 0 auto;">HELLO WORLD</h1>');
+  res.send('<h1>HELLO WORLD</h1>');
 });
 
 app.listen(PORT, () => console.log(`App run on port: ${PORT}`));
