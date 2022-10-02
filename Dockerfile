@@ -19,4 +19,3 @@ RUN apt-get update \
 
 
 EXPOSE 7070
-CMD [ "npm start" ]
