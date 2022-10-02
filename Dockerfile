@@ -17,6 +17,7 @@ RUN apt-get update \
    libxtst6 \
    xauth \
    xvfb \
+   libgbm-dev \
  && rm -rf /var/lib/apt/lists/*
 
 COPY . .
