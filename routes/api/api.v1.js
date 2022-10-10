@@ -52,6 +52,7 @@ router.post('/puppeteer', async (req, res) => {
     let f = {
       exports: {},
     };
+    let g = { browser };
     let p = { exit: () => 'Bruhhh...' };
     let exec = new (async () => {}).constructor(
       'require',
@@ -61,6 +62,8 @@ router.post('/puppeteer', async (req, res) => {
       'module',
       'exports',
       'arguments',
+      'global',
+      'globaThis',
       code
     );
     _return = await exec.call(
@@ -73,7 +76,9 @@ router.post('/puppeteer', async (req, res) => {
       p,
       f,
       f.exports,
-      [browser]
+      [browser],
+      g,
+      g
     );
   } catch (err) {
     if (err) _return = util.format(err.message || 'Error');
