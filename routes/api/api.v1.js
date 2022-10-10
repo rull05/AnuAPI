@@ -12,9 +12,11 @@ router.post('/htmlrender', async (req, res) => {
     return res.send({ msg: "Missing 'html'", status: STATUS_CODES[422] });
   }
   const buffer = await renderHTML(html, option);
-  res.status(200);
-  res.contentType('image/png');
-  res.send(buffer);
+  res.writeHead(200, {
+    'Content-Type': 'image/png',
+    'Content-Length': buffer.length,
+  });
+  res.end(buffer);
 });
 
 router.get('/', (req, res) => {
