@@ -21,7 +21,7 @@ RUN apt-get update \
    fontconfig \
    fonts-noto-cjk \
  && rm -rf /var/lib/apt/lists/*
-RUN fc-lists : family
+RUN fc-list : family
 
 COPY . .
 
