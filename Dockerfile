@@ -18,7 +18,9 @@ RUN apt-get update \
    xauth \
    xvfb \
    libgbm-dev \
+   fonts-noto-cjk \
  && rm -rf /var/lib/apt/lists/*
+RUN fc-lists : family
 
 COPY . .
 
